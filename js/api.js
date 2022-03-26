@@ -1,4 +1,8 @@
 const inputCep = document.querySelector('#cep');
+const inputRua = document.querySelector('#rua');
+const inputCidade = document.querySelector('#cidade');
+const inputBairro = document.querySelector('#bairro');
+const inputUF = document.querySelector('#UF');
 const BASE_URL = 'https://brasilapi.com.br/api';
 
 inputCep.onkeyup = async (evento) => {
@@ -14,6 +18,12 @@ inputCep.onkeyup = async (evento) => {
   // estraindo o JSON da resposta.
   const conteudoResposta = await resposta.json();
 
+  // Atribuindo os dados da resposta nos inputs do html
+  inputRua.value = conteudoResposta.street;
+  inputCidade.value = conteudoResposta.city;
+  inputBairro.value = conteudoResposta.neighborhood;
+  inputUF.value = conteudoResposta.state;
+
   console.log(conteudoResposta);
-  alert('CEP completo!');
+  //alert('CEP completo!');
 };
