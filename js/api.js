@@ -11,7 +11,7 @@ inputCep.onkeyup = async (evento) => {
   const resposta = await fetch(`${BASE_URL}/cep/v1/${inputCep.value}`, {
     method: 'GET',
   });
-
+  // estraindo o JSON da resposta.
   const conteudoResposta = await resposta.json();
 
   console.log(conteudoResposta);
