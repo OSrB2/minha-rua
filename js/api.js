@@ -12,6 +12,8 @@ inputCep.onkeyup = async (evento) => {
     method: 'GET',
   });
 
-  console.log(resposta);
+  const conteudoResposta = await resposta.json();
+
+  console.log(conteudoResposta);
   alert('CEP completo!');
 };
